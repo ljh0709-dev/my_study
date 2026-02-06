@@ -19,22 +19,38 @@ def my_sorted(li):
                 li[j], li[j + 1] = li[j + 1], li[j]
     return li
 
+def selection(li, k):
+    for i in range(k):
+        m_idx = i
+        if i%2==0:
+            for j in range(i+1, my_len(li)):
+                if li[m_idx] < li[j]:
+                    m_idx = j
+            li[i], li[m_idx] = li[m_idx], li[i]
+        else:
+            for j in range(i+1, my_len(li)):
+                if li[m_idx] > li[j]:
+                    m_idx = j
+            li[i], li[m_idx] = li[m_idx], li[i]
+
 
 t = int(input())
 
 for tc in range(1, t + 1):
     n = int(input())
-    arr = my_sorted(list(map(int, input().split())))
-
-    half_small = arr[:int(n / 2)]
-    half_big = arr[int(n / 2):][::-1]
-
-    special_sort = []
-    idx = 0
-    while my_len(special_sort) != 10:
-        special_sort.append(str(half_big[idx]))
-        special_sort.append(str(half_small[idx]))
-        idx += 1
-
-    result = ' '.join(special_sort)
-    print(f'#{tc} {result}')
+    # arr = my_sorted(list(map(int, input().split())))
+    #
+    # half_small = arr[:int(n / 2)]
+    # half_big = arr[int(n / 2):][::-1]
+    #
+    # special_sort = []
+    # idx = 0
+    # while my_len(special_sort) != 10:
+    #     special_sort.append(str(half_big[idx]))
+    #     special_sort.append(str(half_small[idx]))
+    #     idx += 1
+    #
+    # result = ' '.join(special_sort)
+    arr = list(map(int, input().split()))
+    selection(arr, n)
+    print(f'#{tc}', *arr[:10])

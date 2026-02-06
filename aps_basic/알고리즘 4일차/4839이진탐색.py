@@ -6,6 +6,7 @@ def binary_search(lst, n, k):
     end = n-1
     cnt = 0
     while start <= end:
+        cnt += 1
         middle = (start + end) // 2
         if k == lst[middle]:
             return cnt
@@ -13,7 +14,6 @@ def binary_search(lst, n, k):
             end = middle        # 왼쪽 구간 선택
         else:                   # 찾는 값보다 작으면
             start = middle      # 오른쪽 구간 선택
-        cnt += 1
     return -1   # 검색 실패
 
 
