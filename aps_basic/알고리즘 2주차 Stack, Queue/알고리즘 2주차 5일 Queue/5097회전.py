@@ -1,0 +1,1 @@
+import sys; sys.stdin = open('5097회전_input.txt')

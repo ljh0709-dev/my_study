@@ -16,7 +16,11 @@ def solve(N):
         dp[i] = dp[i-1] + 2 * dp[i-2]
 
     return dp[N]
-
+##### 재귀 #####
+def f(N):
+    if N <= 1:
+        return 1
+    return f(N-1) + 2*f(N-2)
 ##############################
 t = int(input())
 for tc in range(1,t+1):
