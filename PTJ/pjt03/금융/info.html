@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- style: style.css에 CSS 작성 -->
+  <link rel="stylesheet" href="./infostyle.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <title>금융 프로필 페이지 만들기</title>
+</head>
+
+<body>
+  <!-- F303 : 네비게이션 바 구현 -->
+  <!-- 상단 프로필 헤더 -->
+  <div class="profile-header">
+    John Doe님의 프로필 페이지
+  </div>
+
+
+  <!-- Navigation Bar -->
+  <div class="nav-fixed">
+    <div class="nav-container">
+      <div class="nav-tabs">
+        <a href="info.html">기본 정보 수정</a>
+        <a href="port.html">포트폴리오 수정</a>
+      </div>
+      <div class="nav-divider"></div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <!-- F301 : 기본 정보 수정 페이지 투자 성형 구현 -->
+    <h2 id="basicinfo" class="title mt-5">기본 정보 수정</h2>
+    <div class="basicinfo-row">
+      <div class="row m-4">
+        <!-- 왼쪽 -->
+        <div class="col-12 col-md-6 left">
+          <h3>프로필 사진</h3>
+          <div class="profile-img">
+            <img src="https://picsum.photos/300" alt="profile">
+          </div>
+
+          <div class="bio">
+            <h3>자기 소개</h3>
+            <div class="bio-input ">
+              <textarea>안녕하세요. 저는 부자가 되고 싶습니다.</textarea>
+              <button>Update</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 오른쪽 -->
+        <div class="col-12 col-md-6 right">
+
+          <div class="section">
+            <h3 class="section-title">투자상품 선호도</h3>
+
+            <div class="options">
+              <label><input type="checkbox"> 주식</label>
+              <label><input type="checkbox"> 채권</label>
+              <label><input type="checkbox"> 부동산</label>
+              <label><input type="checkbox"> 가상 화폐</label>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3 class="section-title">투자 스타일</h3>
+
+            <div class="options">
+              <label><input type="radio" name="style"> 안정형</label>
+              <label><input type="radio" name="style"> 중립형</label>
+              <label><input type="radio" name="style"> 공격형</label>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3 class="section-title">관심 종목</h3>
+
+            <div class="options">
+              <label><input type="checkbox"> 정보기술</label>
+              <label><input type="checkbox"> 소비자</label>
+              <label><input type="checkbox"> 금융</label>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3 class="section-title">투자 기간</h3>
+            <select class="form-select">
+              <option>1년 미만</option>
+              <option>1~3년</option>
+              <option>3~5년</option>
+              <option>5년 이상</option>
+            </select>
+          </div>
+
+          <div class="section">
+            <h3 class="section-title">투자 목적</h3>
+            <div class="options">
+              <label><input type="checkbox">노후 준비</label>
+              <label><input type="checkbox">자산 증식</label>
+              <label><input type="checkbox">단기 수익</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- F302 : 기본 정보 수정 페이지 회원 정보 출력 -->
+    <div class="mt-5">
+      <form>
+        <!-- 회원 번호 -->
+        <div class="mb-3">
+          <label class="form-label">회원 번호</label>
+          <input type="text" class="form-control" value="1" disabled>
+        </div>
+        <!-- ID -->
+        <div class="mb-3">
+          <label class="form-label">ID</label>
+          <input type="text" class="form-control" value="김싸피" disabled>
+        </div>
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="이메일을 설정해주세요">
+            <span class="input-group-text">@example.com</span>
+            <button class="btn btn-info text-white" type="button">Update</button>
+          </div>
+        </div>
+
+        <!-- Nickname -->
+        <div class="mb-3">
+          <label class="form-label">Nickname</label>
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="닉네임을 설정해주세요">
+            <button class="btn btn-info text-white" type="button">Update</button>
+          </div>
+        </div>
+
+        <!-- 나이 -->
+        <div class="mb-3">
+          <label class="form-label">나이</label>
+
+          <div class="input-group">
+            <input type="number" class="form-control" placeholder="나이를 설정해주세요">
+            <button class="btn btn-info text-white" type="button">Update</button>
+          </div>
+        </div>
+
+        <!-- 자산과 연봉 -->
+        <div class="mb-5">
+          <label class="form-label">자산과 연봉</label>
+          <div class="row">
+
+            <!-- 자산 -->
+            <div class="col-6">
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control" placeholder="현재 자산을 입력해주세요">
+              </div>
+            </div>
+
+            <!-- 연봉 -->
+            <div class="col-6">
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control" placeholder="연봉을 입력해주세요">
+                <button class="btn btn-info text-white" type="button">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

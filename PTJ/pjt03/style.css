@@ -1,0 +1,116 @@
+/* CSS 파일 최상단 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.frontpage,
+.my-intro,
+.skills,
+.projects,
+.contact {
+  /* header fixed로 인해 상단 화면 잘리는 현상 방지 */
+  padding-top: 4rem;
+  height: 200px;
+}
+
+.frontpage,
+.skills,
+.contact {
+  background-color: lightgray;
+}
+
+
+
+/* max: 최대 ~까지 적용(이하) */
+/* min: 최소 ~부터 적용(이상) */
+/* @media: 내가 원하는 px 사이즈일 때 + 내가 원하는 CSS를 주려면 */
+@media screen and (max-width: 500px) {
+  .frontpage {
+    background-color: lightblue;
+  }
+}
+
+/* 상호작용 */
+/* .intro-button:hover {
+  background-color: red;
+}
+
+.intro-button {
+  transition: transform 0.6s ease;
+}
+
+.intro-button:active {
+  background-color: green;
+  transform: rotate(7200deg);
+}
+
+.intro-text {
+  font-size: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(40);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+} */
+
+/* 기본적으로 모든 섹션을 한 줄에 배치하기 위해 col 설정 */
+.my-intro, .skills, .projects, .contact {
+  margin: 10px 0; /* 섹션 간의 간격 */
+}
+
+/* 992px 이상: 한 줄에 4개 */
+@media (min-width: 992px) {
+  .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .my-intro, .skills, .projects, .contact {
+    flex: 0 0 23%; /* 4개가 한 줄에 배치되도록 너비 설정 */
+  }
+}
+
+/* 768px 이상 992px 미만: 한 줄에 3개 */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .my-intro, .skills, .projects, .contact {
+    flex: 0 0 30%; /* 3개가 한 줄에 배치되도록 너비 설정 */
+  }
+}
+
+/* 576px 이상 768px 미만: 한 줄에 2개 */
+@media (min-width: 576px) and (max-width: 767px) {
+  .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .my-intro, .skills, .projects, .contact {
+    flex: 0 0 45%; /* 2개가 한 줄에 배치되도록 너비 설정 */
+  }
+}
+
+/* 576px 미만: 한 줄에 1개 */
+@media (max-width: 575px) {
+  .container-fluid {
+    display: block;
+  }
+  .my-intro, .skills, .projects, .contact {
+    width: 100%; /* 1개가 한 줄에 배치되도록 너비 설정 */
+    margin-bottom: 15px;
+  }
+}

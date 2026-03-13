@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      /* w100치면 자동완성 */
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+      background-color: gray;
+      margin: 50px;
+      padding: 50px;
+    }
+
+    .inline-box {
+      /* block을 하면 마진 상쇄가 발생할 수 있다. */
+      /* inline-block은 마진 상쇄 없음 */
+      display: inline-block;
+    }
+  </style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+  <!-- 한 줄을 차지 : block 요소 -->
+  <!-- 필요한 만큼만 차지 : inline 요소 (위아래 마진은 무시됨) -->
+
+  <!-- div 1개 span 1개 -->
+  <!-- div+span -->
+  <div></div>
+  <span></span>
+  <!-- div태그 5개 만들건데 내부에는 p태그 1개씩 -->
+  <!-- (div>p)*5 -->
+  <!-- div.box 클래스가 box인 div 생성 -->
+  <div class="box">div 태그</div>
+  <!-- span.box 클래스가 box인 div 생성 -->
+  <span class="box inline-box">span 태그</span>
+
+  <!-- inline인데 block처럼 쓰고싶음 -->
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
