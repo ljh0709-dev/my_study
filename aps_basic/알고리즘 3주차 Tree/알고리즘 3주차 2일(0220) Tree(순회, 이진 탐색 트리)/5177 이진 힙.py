@@ -43,7 +43,7 @@ for tc in range(1,t+1):
     for i in nums:
         enq(i)
 
-    #print(heap)
+    # print(heap)
     p = N//2
     total = heap[p]
 
